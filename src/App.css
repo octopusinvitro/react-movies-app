@@ -1,0 +1,144 @@
+body {
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	background: #14181b;
+	color: #fff;
+}
+
+.container {
+	max-width: 100%;
+	margin: auto;
+	padding: 1rem;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+h1 {
+	font-family: 'Nabla', cursive;
+	font-size: 3rem;
+}
+
+input {
+	flex: 0 0 50%;
+	max-width: 50%;
+  height: calc(1.5em + .75rem);
+  padding: .375rem .75rem;
+	font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #bbb;
+  background-color: rgba(255, 255, 255, .1);
+  background-clip: padding-box;
+  outline: 1px solid #bbb;
+  border: 1px solid #bbb;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,
+	            box-shadow .15s ease-in-out;
+}
+
+input::placeholder {
+	color: #777;
+	opacity: 1;
+}
+
+@media screen and (min-width: 769px) {
+	input {
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+	}
+}
+
+a {
+	color: white;
+}
+
+.movie-list {
+	list-style-type: none;
+	display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: repeat(auto-fit, 10rem);
+  grid-template-rows: minmax(350px, .5fr);
+	margin: 0;
+	padding: 3rem 1rem;
+	overflow-x: scroll;
+}
+
+picture {
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	background: linear-gradient(to bottom right, #412249, transparent);
+	border-radius: 1rem;
+	transition: transform 0.2s;
+	overflow: hidden;
+}
+
+picture:hover {
+	transform: scale(1.1);
+}
+
+picture:hover .overlay {
+	opacity: 1;
+}
+
+.placeholder,
+.poster {
+	max-width: 80%;
+	height: auto;
+	margin: 2rem 10% 0;
+	border-radius: .25rem;
+}
+
+.placeholder {
+	padding: 1rem;
+	color: #bbb;
+	text-align: center;
+	text-transform: uppercase;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+figcaption {
+	padding: 1rem;
+	font-size: .8rem;
+	font-weight: 300;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.year {
+	color: #ffdc39;
+	font-weight: bold;
+	margin: 0 auto;
+}
+
+.overlay {
+	position: absolute;
+	right: 0; bottom: 0; left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5rem 1rem;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.8);
+	transition: 0.5s ease;
+	opacity: 0;
+}
+
+.overlay:hover {
+	cursor: pointer;
+}
+
+.overlay svg {
+	width: 1rem;
+	height: 1rem;
+	fill: red;
+}
